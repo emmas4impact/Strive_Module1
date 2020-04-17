@@ -18,7 +18,7 @@ const myDetails ={
     firstName: "Emmanuel",
     lastName: "Adedeji",
     email: "emmans4destiny@gmail.com",
-    age: 12,
+    age: 15,
    
 };
 
