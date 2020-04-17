@@ -1,7 +1,7 @@
 //STRINGS
 
 
-/* let myNumber = 2
+let myNumber = 2
 const myString =`First line
 Second line
 The is my value ${2 +3}
@@ -21,17 +21,5 @@ console.log(splittedwords)
 console.log(splittedwords.join(',       '))
 
 console.log("asd".repeat(5))
- */
+ 
 
-//Function
-
-let number = 4
-const squareFunction = function(num){
-    const square = num * num
-
-    return square
-}
-
-//FUNCTION EXECUTION
-
-console.log(squareFunction(number))
