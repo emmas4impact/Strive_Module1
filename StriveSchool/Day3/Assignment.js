@@ -6,7 +6,7 @@ ASSIGNMENT RULES
 - You can google / use StackOverflow BUT we suggest you to use just the material provided
 */
 //Exercise 1
-const area = function(a,b){
+/* const area = function(a,b){
 
     return a*b
 
@@ -49,7 +49,7 @@ console.log('The aboulute diff is less than 19: '+crazyDiff(19,19));
 //Exercise 4 boundary 
 const boundary = function(n){
     
-    if(20 <= n && n <=100 || n===400){
+    if((20 <= n && n <=100) ||( n===400)){
         return true
     }else{
         return false
@@ -129,7 +129,7 @@ const cutString = function(strCut){
 
     
 }
-console.log(cutString("Strive"))
+console.log(cutString("Strive")) */
 
 
 //Exercise 10
@@ -137,18 +137,36 @@ console.log(cutString("Strive"))
 const giveMeRandom = function(rand){
     let array = [];
 
-    while(array.length < rand){
-
-        let r = Math.floor(Math.random() * 10) + 0;
-        if(array.indexOf(r)=== -1)array.push(r);
-
+    while(rand -- >0){
+        array.push(Math.round(Math.random() * 10) ) ;
+        /* if(array.indexOf(r)=== -1){
+            array.push(r);
+            console.log("the value of r"+array.length); */
     }
+  
+     return array;
+ 
+ }
+ console.log(giveMeRandom(16))
+
+ //Exercise 11
+
+const checkArray = function(checkRand){
+    
+
+    for(let i=0; i>5; i++){
+        //i(checkRand)
+        checkRand = giveMeRandom(i)
+        
+        
+    }
+   
+
 
     
     
-     return array;
+     return checkRand + checkRand;
     
      
  }
- console.log(giveMeRandom(9))
-
+ console.log(checkArray(7))
