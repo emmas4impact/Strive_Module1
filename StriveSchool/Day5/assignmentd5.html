@@ -5,61 +5,146 @@
             Write a function to change the document title of the page in something else
             */
 
-      function changeTitle(newTitle) {}
+      function changeTitle(newTitle) {
+          let newTitles = document.querySelector('div h1')
+          newTitles.innerText = newTitle
+          console.log(newTitle)
+      }
 
       /* EXERCISE 2
             Write a function to change the class of the H1 on a page in "myHeading"
             */
 
-      function addClassToHeading() {}
+      function addClassToHeading() {
+        let newClass = document.querySelector('div h1')
+        //newClass.innerText = "Changed!"
+        newClass.classList.add('newClass')
+        console.log(newClass)
+      }
 
       /* EXERCISE 3
             Write a function to change the text of only the p which are child of a div
             */
 
-      function changePcontent() {}
+      function changePcontent() {
+        let newContent = document.querySelectorAll('div p')
+        for(let i=0; i<newContent.length; i++){
+            newContent[i].innerText = "Changed values in Paragraph"
+
+        }
+        //newContent.innerText = "Changed values in Paragraph"
+        
+        console.log(newContent)
+      }
+
+
+     
 
       /* EXERCISE 4
             Write a function to change the destination of every link to https://www.google.com
             */
 
-      function changeUrls() {}
+      function changeUrls() {
+        let newUrl = document.getElementsByTagName('a')
+        for(let y=0; y<newUrl.length; y++){
+            newUrl[y].href= 'https://www.google.com'
+        
+
+        }
+        console.log(newUrl)
+            
+      }
 
       /* EXERCISE 5
             Write a function to add a new item ONLY to the second list
             */
 
-      function addToTheSecond(content) {}
+      function addToTheSecond(content) {
+        let newContent = document.querySelector('#secondList')
+
+        let elem = document.createElement('li')
+        let textnode = document.createTextNode(content);  
+        elem.appendChild(textnode)
+        newContent.appendChild(elem)
+        console.log(elem)
+
+      }
 
       /* EXERCISE 6
            Write a function to add a second paragraph to the div
             */
 
-      function addParagraph(content) {}
+      function addParagraph(content) {
+        let newElem = document.createElement('p')
+        let node = document.createTextNode(content);
+        newElem.appendChild(node) 
+
+        let newParagraph = document.querySelectorAll('div')
+        for(let i=0; i<newParagraph.length; i++){
+            newParagraph[i].appendChild(newElem)
+
+            
+        }
+        console.log(newElem)
+        
+      }
 
       /* EXERCISE 7
            Write a function to make the first UL disappear
             */
 
-      function firstUlDisappear() {}
+      function firstUlDisappear() {
+          //document.getElementById("des").style.visibility = "hidden";  
+          let newDis = document.querySelector('#firstList')
+          newDis.style.visibility="hidden";
+          
+          console.log(newDis)
+
+      }
 
       /* EXERCISE 8
             Write a function to make the background of every UL green
             */
 
-      function paintItGreen() {}
+      function paintItGreen() {
+        let newDis = document.querySelectorAll('ul')
+        for(let i=0; i<newDis.length; i++){
+            newDis[i].style.backgroundColor="green"
+        }
+        console.log(newDis)
+
+      }
 
       /* EXERCISE 9
             Make the heading of the page changing color every time the user clicks on it
             */
 
-      function makeItClickable() {}
+      function makeItClickable() {
+        let newHead = document.querySelector('h1')
+        newHead.onclick = function (e) {
+          console.log('you clicked me!!')
+          console.log('EVENT INFO', e)
+          let letters = '0123456789ABCDEF';
+          let color = '#';
+           for (var i = 0; i < 6; i++) {
+               color += letters[Math.floor(Math.random() * 16)];
+            }
+          newHead.style.color =color
+        }
+        
+
+
+
+
+      }
 
       /* EXERCISE 10
           Create a new welcome alert message when the page successfully loads
             */
 
-      window.onload = function () {}
+      window.onload = function () {
+          alert("Welcome!")
+      }
 
       /* EXERCISE 11
             Use HTML5 tags to divide sections, headers etc 
