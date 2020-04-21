@@ -100,10 +100,14 @@
         myNewArticle.innerText = "I've been created from scratch! " + random
         myNewArticle.style.color = 'greenyellow'
         myNewArticle.classList.add('genericClass')
+        myNewArticle.onclick = function (e) {
+          console.log('you clicked me!!')
+          console.log('EVENT INFO', e)
+        }
         // element is completed but I need to attach it somewhere
         let parent = document.querySelector('#articleContainer')
         parent.appendChild(myNewArticle)
-        
+
       }
     </script>
   </body>

@@ -26,6 +26,9 @@
 
   <body>
     <div>
+      <input id="name" type="text" onkeydown="keyPressed(event)" />
+    </div>
+    <div>
       <input id="name" type="text" />
     </div>
     <div>
@@ -47,6 +50,12 @@
         document.querySelector('#name').value = ''
         document.querySelector('#email').value = ''
       }
+      function keyPressed(e) {
+        console.log('a key has been pressed!')
+        console.log(e)
+        if (e.key === '#') {
+          alert('the # char is not allowed!')
+        }
     </script>
     
   </body>
