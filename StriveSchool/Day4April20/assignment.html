@@ -33,7 +33,7 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
           
           width: 50%;
           height: 300px; /* only for demonstration, should be removed */
-          background: #ccc;
+          
           padding: 100px;
       }
       table, th, td {
@@ -163,18 +163,6 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
           </script>            
         </section>
 ​
-    <!-- EXERCISE 7: 
-            Create an "book haircut" form.
-            The form must have:
-            - phone number
-            - date
-            - name
-​
-            Phone number and date are mandatory, the name is optional.
-            Create a form with a submit button, ready to be used in a real context.
-            Style it as you like it.
-            [OPTIONAL] On submit click, console log an object containing Phone Number, Date and Name.
-        -->
         <section id="bookHaircut">
           <h2>Book haircut</h2> 
           <label for="fname">Name: </label><br>
@@ -247,32 +235,19 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
             <td>20</td>
           </tr>
         </table>
-        </section>
-
-        ​
-    <!-- EXERCISE 9: 
-            Place here a footer including:
-            - Name of the Barber Shop
-            - Address
-            - Phone Number
-            - Email (should be a clickable link)
-        -->
-        
-        <footer>
+      </section>
+            <footer>
           <p>Vantaa's Baber Shop · Rasinkatu 10 D 89 01360, Vantaa · +358449767777 · <a href="mailto:emmans4destiny@gmail.com">emmans4destiny@gmail.com</a> </p>
         </footer>
-​
-    <script>
+        
+        <script>
       window.onload = function () {
-        console.log('Page loaded!');
-        /* EXERCISE 10:
-                    Write on console the size (height and width) of the current browser window
-                    Write on console the size (height and width) of the current page window
 
-                */
+      console.log('Page loaded!');
       console.log("Size of browser window is: ",window.outerHeight,"x", window.outerWidth);
       console.log("Size of current page window is: ",window.innerHeight,"x", window.innerWidth);
       }
+
     </script>
   </body>
 </html>
