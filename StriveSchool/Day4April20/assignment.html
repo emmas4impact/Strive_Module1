@@ -20,12 +20,20 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
     <title>My Fav Barber Shop</title>
     <style>
       h1 {
-        color: greenyellow;
+        color: indigo;
       }
       h2{
         color:blueviolet
 
 
+
+      }
+      nav {
+          
+          width: 50%;
+          height: 300px; /* only for demonstration, should be removed */
+          background: #ccc;
+          padding: 100px;
       }
       table, th, td {
             border: 1px solid black;
@@ -35,6 +43,14 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
             padding: 5px;
             text-align: left;    
           }
+          body{ background-color: greenyellow}
+          @media (max-width: 600px) {
+          nav{
+            width: 100%;
+            height: auto;
+          }
+        }
+
 
           footer {
                background-color: #777;
@@ -254,6 +270,8 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
                     Write on console the size (height and width) of the current page window
 
                 */
+      console.log("Size of browser window is: ",window.outerHeight,"x", window.outerWidth);
+      console.log("Size of current page window is: ",window.innerHeight,"x", window.innerWidth);
       }
     </script>
   </body>
