@@ -13,9 +13,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
 <html lang="en">
 
 <head>
-   <!-- EXERCISE 1:
-    Specify the title, the charset (UTF-8) and the viewport of the page.
-    -->
+    <title>List Site</title>
    <style>
       /* EXERCISE 2:  
        Create a CSS class for the task list with a diverse background
@@ -39,10 +37,12 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
    <!-- EXERCISE 3
         Create a button "Remove Last Task" to trigger the method "removeLast"
         -->
+    <input type="button" value="Remove Last Task" onclick="removeLast()">
 
    <!-- EXERCISE 4
         Create a button "Remove First Task" to trigger the method "removeFirst"
         -->
+    <input type="button" value="Remove First Task" onclick="removeFirst()">
 
    <ul id="myTaskList">
    </ul>
@@ -58,33 +58,83 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
 
    <script>
       function addNewTask() {
-         /* EXERCISE 5: 
-             Add a new task to the list.
-             Suggestion:
-             - Use document.getElementById to get the UL item and the input text
-             - Use the document.createElement to create the new List Item
-             - Append the child to the UL
-         */
+          let addTask = document.getElementById("myTaskList")
+          let listElement = document.createElement('li')
+          let inputs = document.getElementById("newTask").value
+          let textnode = document.createTextNode(inputs)
+          listElement.appendChild(textnode)
+          addTask.appendChild(listElement)
+         
       }
 
-      /* EXERCISE 6: 
-          Implement a method "removeLast" which removes the last item from the task list
-      */
+      function removeLast(){
+          let removeTask = document.getElementById("myTaskList")
+          let listItems = removeTask.getElementsByTagName("li");
+          let last=listItems[listItems.length-1];
+          removeTask.removeChild(last);
 
-      /* EXERCISE 7: 
-            Implement a method "removeFirst" which removes the first item from the task list
-      */
+         
+      }
 
-      /* EXERCISE 8: 
-         Implement a method "getTasksAsArray" which returns (and print to the console) an array containing the tasks as string
-      */
+      function removeFirst(){
+          let removeTask = document.getElementById("myTaskList")
+          
+          removeTask.removeChild(removeTask.childNodes[1])
+  
+                   
+      }
+
+      
+     function getTasksAsArray(){
+        let taskArray=[];
+        //let getTask = document.getElementById("myTaskList")
+        let listElement = document.getElementsByTagName("li");
+        for(let i=0; i<listElement.length; i++){
+            
+            taskArray.push(listElement[i].innerText)
+           
+        }
+        console.log(taskArray)
+            
+
+     }
 
       /* EXERCISE 9:
          Create a method "changeTaskBackgroundColor" which takes the color from the color picker ad apply it as background to every list item
       */
+     function changeTaskBackgroundColor() {
+         let changeColor =document.querySelector('#myTaskList')
+         changeColor.style.backgroundColor =document.getElementById('colorPicker').value
+
+         
+     }
+     function swap(arr, first_Index, second_Index){
+        var temp = arr[first_Index];
+        arr[first_Index] = arr[second_Index];
+        arr[second_Index] = temp;
+    }
+
+     function bubbleSort(){
+        let listElement = document.getElementsByTagName("li");
+        var len = listElement.length,
+        i, j, stop;
+
+        for (i=0; i < len; i++){
+            for (j=0, stop=len-i; j < stop; j++){
+                if (listElement[j] > listElement[j+1]){
+                swap(listElement, j, j+1);
+                
+                }
+            }
+        }
+        console.log(listElement[len])
+
+
+     }
 
       /* EXERCISE 10: 
          Implement a method "bubbleSort()" which sort the task list alphabetically.
+
          
          EXTRA EXERCISE:
          Implement bubblesort algorithm
