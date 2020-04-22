@@ -142,6 +142,8 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
               if(email !==''){
                 document.querySelector('#email').style.backgroundColor='green'
                 console.log('email is ', email)
+                confirm("Please check if the email is correct! are you sure you want to continue?");
+                alert("Email updated");
                 
 
               }else{
@@ -183,6 +185,8 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
               document.querySelector('body').appendChild(userDiv)
               document.querySelector('#name').value = ''
               document.querySelector('#date').value= ''
+              confirm("Order received! are you sure you want to continue?");
+              alert("Order confirmed!");
               
             }
           </script>            
@@ -199,27 +203,27 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
           </tr>
           <tr>
             <td>Shaving</td>
-            <td>20</td>
-            <td>0</td>
-            <td>0</td>
+            <td>20€</td>
+            <td>-</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>Shaving and Barbing</td>
-            <td>30</td>
-            <td>20</td>
-            <td>10</td>
+            <td>30€</td>
+            <td>20€</td>
+            <td>10€</td>
           </tr>
           <tr>
             <td>Barbing</td>
-            <td>25</td>
-            <td>20</td>
-            <td>10</td>
+            <td>25€</td>
+            <td>20€</td>
+            <td>10€</td>
           </tr>
           <tr>
             <td>Styling</td>
-            <td>40</td>
-            <td>50</td>
-            <td>20</td>
+            <td>40€</td>
+            <td>50€</td>
+            <td>20€</td>
           </tr>
         </table>
       </section>
