@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <!--
+        BINGO CHALLENGE!!!
+        Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+        Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+
+        EXTRA: 
+        - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+        - Create a USER BOARD with random 24 numbers that highlights as the main board does
+        - Let the user choose HOW MANY user boards he's willing to play with and create them.
+    -->
+    
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap"/>
+    <title>Bingo Game!</title>
+    <style>
+        body{
+                background-color: rgb(35, 44, 44);
+                color: white;
+                font-family: "Nunito" sans-serif;
+                max-width: 768px;
+                margin: 0 auto;
+            }
+        #bingo{
+                width: 140.8%;
+                margin-bottom: 20px;
+                border: 1px solid white;
+                
+            }
+         .cells{
+                display: inline-block;
+                width: 75px;
+                text-align: center;
+                min-height: 25px;
+                border: 1px solid 
+              
+                
+            }
+         h1{
+                text-align: center;
+                margin-top: 20px;
+                color: rgb(136, 42, 58);
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        input{
+               
+                color: RED;
+                border: 0;
+                padding: 15px;
+                font-weight: bold;
+            }
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <h1>BING GAME!</h1>
+    <div id="bingo"></div>
+    <div>
+        <h4>Game Time</h4>
+        <input type="button" value="PLAY" onclick="randomizePlay()"/>
+        Result of game: <input type="text" name="getnum" id="getNum">
+    </div>
+   
+    <script>
+        arryList = 76;
+              
+        
+        window.onload=function(){
+            
+            
+               //var numberOfCells = randomizePlay()
+            var bingo = document.querySelector('#bingo')
+                
+                for (let i = 0; i < arryList ; i++) {
+                   
+                    let child = document.createElement('div')
+                    child.className="cells"
+                    
+                    let cells = document.createElement('h3')
+                    let cellNum = i + 1
+                    cells.innerHTML = cellNum
+                    
+                    child.appendChild(cells)
+                    bingo.appendChild(child)
+                    
+                }
+                
+          }
+          function randomizePlay() {
+                           
+             let randomPlay = document.querySelectorAll('.cells')
+             const randomElement = Math.floor(Math.random() * arryList);
+             for (let i = 0; i < randomPlay.length; i++) {
+                if(randomElement===parseInt(randomPlay[i].innerText)){
+                    randomPlay[i].style.backgroundColor = "greenyellow"
+                    document.querySelector('#getNum').value = randomElement
+                }
+               
+             }
+              
+            //  console.log("random number =>", randomElement);
+              
+          }
+    
+       
+    </script>
+  
+  </body>
+</html>
