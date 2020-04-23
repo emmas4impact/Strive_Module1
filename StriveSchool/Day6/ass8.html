@@ -64,6 +64,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
           let textnode = document.createTextNode(inputs)
           listElement.appendChild(textnode)
           addTask.appendChild(listElement)
+          document.querySelector('#newTask').value =""
          
       }
 
@@ -94,7 +95,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
             taskArray.push(listElement[i].innerText)
            
         }
-        console.log(taskArray)
+        return taskArray
             
 
      }
@@ -108,30 +109,41 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
 
          
      }
-     function swap(arr, first_Index, second_Index){
-        var temp = arr[first_Index];
-        arr[first_Index] = arr[second_Index];
-        arr[second_Index] = temp;
-    }
+     let taskList = document.querySelector('#myTaskList')
 
-     function bubbleSort(){
-        let listElement = document.getElementsByTagName("li");
-        var len = listElement.length,
-        i, j, stop;
+function bubbleSort(){
 
-        for (i=0; i < len; i++){
-            for (j=0, stop=len-i; j < stop; j++){
-                if (listElement[j] > listElement[j+1]){
-                swap(listElement, j, j+1);
-                
-                }
+    let arr = getTasksAsArray()
+    console.log(arr)
+    
+    let swapped;
+
+    do {
+        swapped = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > arr[i + 1]) {
+                let tmp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = tmp;
+                swapped = true;
             }
         }
-        console.log(listElement[len])
+    } while (swapped);
+    
+   
+    
+    taskList.innerHTML = ''
 
+    for (let i = 0; i < arr.length; i++) {
+        let task = document.createElement('li')
+        let content = document.createTextNode(arr[i])
+        task.appendChild(content)
+        taskList.appendChild(task)
+        
+    }
 
-     }
-
+};
+    
       /* EXERCISE 10: 
          Implement a method "bubbleSort()" which sort the task list alphabetically.
 
